@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specific Images</title>
+</head>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+<style>
+    *{
+      overflow: hidden;
+    }
+    section{
+        background-color: rgb(140, 140, 129);
+    }
+    footer{
+        background-color: rgb(19, 24, 39);  
+    }
+    .foot{
+        color: white;
+    }
+    .imagecontainer{
+      transform: translateY(-100px);
+    }
+</style>
+<body>
+    <header class="text-gray-400 bg-gray-900 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl"><a href="index.html">Russel's Image Generator</a></span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap justify-items-center">
+            <a href="Random_page.html" class="mr-5 hover:text-white">Generate Random Image</a>
+            <a href="Specific_page.html" class="mr-5 hover:text-white">Generate Specific Image</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap w-full mb-20">
+            <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
+                    <!-- Text Input -->
+                    <label for="name">Enter a tag of photo</label>
+                    <input type="text" id="name" name="name" placeholder="tags" required class="border rounded px-3 py-2">
+                </h1>
+                <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+            </div>
+            <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
+                <button class="generate-button bg-indigo-500 text-white py-2 px-4 rounded" onclick="generateAction()">Generate</button>
+            </p>
+        </div>
+    </div>
+    
+
+
+        <div class="imagecontainer">
+          <div class="flex flex-wrap -m-4">
+            <div class="xl:w-1/4 md:w-1/2 p-4">
+              <div class="bg-gray-100 p-6 rounded-lg">
+                <img class="h-40 rounded w-full object-cover object-center mb-6" id="imagePlaceholder1" src="https://dummyimage.com/720x400" alt="imagePlaceholder1">
+                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font" id="author1">Author</h3>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-4" id="likesCount1">Likes Count:</h2>
+                <p class="leading-relaxed text-base" id="location1">Location</p>
+              </div>
+            </div>
+            <div class="xl:w-1/4 md:w-1/2 p-4">
+              <div class="bg-gray-100 p-6 rounded-lg">
+                <img class="h-40 rounded w-full object-cover object-center mb-6" id="imagePlaceholder2" src="https://dummyimage.com/721x401" alt="imagePlaceholder2">
+                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font" id="author2">Author</h3>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-4" id="likesCount2">Likes Count:</h2>
+                <p class="leading-relaxed text-base" id="location2">Location</p>
+              </div>
+            </div>
+            <div class="xl:w-1/4 md:w-1/2 p-4">
+              <div class="bg-gray-100 p-6 rounded-lg">
+                <img class="h-40 rounded w-full object-cover object-center mb-6" id="imagePlaceholder3" src="https://dummyimage.com/722x402" alt="imagePlaceholder3">
+                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font" id="author3">Author</h3>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-4" id="likesCount3">Likes Count</h2>
+                <p class="leading-relaxed text-base" id="location3">Location</p>
+              </div>
+            </div>
+            <div class="xl:w-1/4 md:w-1/2 p-4">
+              <div class="bg-gray-100 p-6 rounded-lg">
+                <img class="h-40 rounded w-full object-cover object-center mb-6" id="imagePlaceholder4" src="https://dummyimage.com/723x403" alt="imagePlaceholder4">
+                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font" id="author4">Author</h3>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-4" id="likesCount4">Likes Count</h2>
+                <p class="leading-relaxed text-base" id="location4">Location</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+    <div class="footer">
+        <footer class="text-gray-600 body-font">
+          <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+              <span  class="ml-3 text-xl">
+                  <p class="foot">Russel's Image Generator</p></span>
+            </a>
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© August-2024</p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+              <a class="text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500">
+                <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                  <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                </svg>
+              </a>
+            </span>
+          </div>
+        </footer>
+    </div>
+
+    <script>
+      const accessKey = 'wZDn-GknJ6uQwAZl-_CHuYZUWZOjvJDQFgft1scqnB0'; // Your Unsplash API access key
+  
+      async function generateAction() {
+          event.preventDefault(); // Stop form submission if using form submission
+          
+          const tag = document.getElementById('name').value;
+          const url = `https://api.unsplash.com/photos/random?query=${tag}&count=4&client_id=${accessKey}`;
+  
+          try {
+              const response = await fetch(url);
+              const images = await response.json();
+  
+              // Update image placeholders with the random images
+              document.getElementById('imagePlaceholder1').src = images[0].urls.regular;
+              document.getElementById('imagePlaceholder2').src = images[1].urls.regular;
+              document.getElementById('imagePlaceholder3').src = images[2].urls.regular;
+              document.getElementById('imagePlaceholder4').src = images[3].urls.regular;
+  
+              // Update additional information
+              document.getElementById('author1').textContent = images[0].user.name;
+              document.getElementById('likesCount1').textContent = `Likes Count: ${images[0].likes}`;
+              document.getElementById('location1').textContent = images[0].location ? images[0].location.title : 'No location info';
+  
+              document.getElementById('author2').textContent = images[1].user.name;
+              document.getElementById('likesCount2').textContent = `Likes Count: ${images[1].likes}`;
+              document.getElementById('location2').textContent = images[1].location ? images[1].location.title : 'No location info';
+  
+              document.getElementById('author3').textContent = images[2].user.name;
+              document.getElementById('likesCount3').textContent = `Likes Count: ${images[2].likes}`;
+              document.getElementById('location3').textContent = images[2].location ? images[2].location.title : 'No location info';
+  
+              document.getElementById('author4').textContent = images[3].user.name;
+              document.getElementById('likesCount4').textContent = `Likes Count: ${images[3].likes}`;
+              document.getElementById('location4').textContent = images[3].location ? images[3].location.title : 'No location info';
+  
+          } catch (error) {
+              console.error('Error fetching images:', error);
+          }
+      }
+  </script>
+  
+  
+</body>
+</html>
